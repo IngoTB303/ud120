@@ -24,7 +24,12 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 #########################################################
 ### your code goes here ###
-
+from sklearn import tree
+clf = tree.DecisionTreeClassifier(min_samples_split=40)
+clf.fit(features_train, labels_train)
+acc = clf.score(features_test, labels_test)
+print "accuracy = ", acc
+print "no. of features: ", len(features_train[0])
 
 #########################################################
 
